@@ -1,4 +1,5 @@
 import "./../scss/style.scss";
+<<<<<<< HEAD
 import { dateSort } from "./functions/dateSort";
 import { selectCategories } from "./functions/selectCategories";
 
@@ -50,3 +51,7 @@ selectCategories(blogPosts)
 
 
 
+=======
+import { Blog } from "./module/blog.ts";
+import { createBlogpost } from "./function/createBlogpost.ts";
+>>>>>>> feature-createblog
