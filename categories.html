@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The blog</title>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <main>
+        <div id="mainContainer">
+            <article class="categoryContainer">
+                <section class="categoryContainer___selectSection">
+                    <label for="category">Category:</label>
+                    <select name="category" id="category">
+                      <option value="entertainment">Entertainment</option>
+                      <option value="technology">Technology</option>
+                      <option value="sport">Sport</option>
+                      <option value="travel">Travel</option>
+                      <option value="foodanddrink">Food and Drink</option>
+                    </select>
+                    <button id="categorySort">See Posts</button>
+                </section>
+                <section class="categoryContainer___list"></section>
+            </article>
+        </div>
+    </main>
+    <script type="module" src="/src/ts/main.ts"></script>
+</body>
+</html>
