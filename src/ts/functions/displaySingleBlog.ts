@@ -1,4 +1,5 @@
 import { Blog } from "../module/blog";
+import { creatHtml } from "./creatHtml";
 
 export const blog: Blog = new Blog(
   "test",
@@ -8,7 +9,7 @@ export const blog: Blog = new Blog(
   "jag"
 );
 
-export function displaySingleBlog(aBlog: Blog) {
+export function displaySingleBlog(aBlog: Blog, blogList: Blog[]) {
   const mainContainer = document.querySelector(
     "#mainContainer"
   ) as HTMLDivElement;
@@ -50,6 +51,9 @@ export function displaySingleBlog(aBlog: Blog) {
   backButtonITag.classList.add("fa-solid", "fa-arrow-left");
 
   backButton.appendChild(backButtonITag);
+  backButton.addEventListener("click", () => {
+    creatHtml(blogList);
+  });
 
   headingContainer.appendChild(titleTag);
   headingContainer.appendChild(dateTag);

@@ -7,18 +7,11 @@ import { createBlogpost } from "./functions/createBlogpost";
 import { creatHtml } from "./functions/creatHtml";
 import { LoadFromLS, SaveToLS } from "./functions/ls";
 let blogPosts: Blog[] = [];
-LoadFromLS(blogPosts);
-let dateSortblogPosts = dateSort(blogPosts);
-console.log(dateSortblogPosts);
-/* Call the create html-function and iterate through the new sorted list, dateSortblogPosts,
- to display the blog posts in descending order, with the newest blog post appearing first. */
-
-selectCategories(blogPosts);
 let page = document.body.id;
 
 switch (page) {
   case "1":
-    creatHtml(blogPosts);
+    creatHtml(LoadFromLS(blogPosts));
     // displaySingleBlog(blog);
     break;
   case "2":
@@ -32,5 +25,13 @@ switch (page) {
       console.log(blogPosts);
       SaveToLS(blogPosts);
     });
+    break;
+  case "3":
+    let loadedList: Blog[] = LoadFromLS(blogPosts);
+    /* Call the create html-function and iterate through the new sorted list, dateSortblogPosts,
+    to display the blog posts in descending order, with the newest blog post appearing first. */
+
+    selectCategories(loadedList);
+    creatHtml(blogPosts);
     break;
 }

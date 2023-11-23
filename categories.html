@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The blog</title>
-</head>
-<body>
+  </head>
+  <body id="3">
     <header>
-        <nav></nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="/createBlog.html">Skapa inlägg</a></li>
+          <li><a href="/categories.html">Hitta inlägg</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <div id="mainContainer">
-            <article class="categoryContainer">
-                <section class="categoryContainer___selectSection">
-                    <label for="category">Category:</label>
-                    <select name="category" id="category">
-                      <option value="entertainment">Entertainment</option>
-                      <option value="technology">Technology</option>
-                      <option value="sport">Sport</option>
-                      <option value="travel">Travel</option>
-                      <option value="foodanddrink">Food and Drink</option>
-                    </select>
-                    <button id="categorySort">See Posts</button>
-                </section>
-                <section class="categoryContainer___list"></section>
-            </article>
-        </div>
+      <article class="categoryContainer">
+        <section class="categoryContainer___selectSection">
+          <label for="category">Category:</label>
+          <select name="category" id="category">
+            <option value="entertainment">Entertainment</option>
+            <option value="technology">Technology</option>
+            <option value="sport">Sport</option>
+            <option value="travel">Travel</option>
+            <option value="foodanddrink">Food and Drink</option>
+          </select>
+          <button id="categorySort">See Posts</button>
+        </section>
+        <section class="categoryContainer___list"></section>
+      </article>
+      <div id="mainContainer"></div>
     </main>
     <script type="module" src="/src/ts/main.ts"></script>
-</body>
+  </body>
 </html>
