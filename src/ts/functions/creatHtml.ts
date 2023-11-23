@@ -1,22 +1,6 @@
 import { Blog } from "../module/blog";
 
-let blog1 = new Blog(
-  "Förta blog innläg",
-  "12:00",
-  "husdjur",
-  "Jag har en hund",
-  "Erik Lindner"
-);
-let blog2 = new Blog(
-  "Andra blog innläg",
-  "12:00 27 januari",
-  "husdjur",
-  "Jag har en katt",
-  "Erik Lindner"
-);
-
-let blogPosts = [blog1, blog2];
-export function creatHtml() {
+export function creatHtml(blogPosts: Blog[]) {
   for (let i = 0; i < blogPosts.length; i++) {
     const mainContainer = document.getElementById("mainContainer");
     const blogContainer = document.createElement("div");
@@ -24,7 +8,7 @@ export function creatHtml() {
     const titleTag = document.createElement("h2");
     const categoryDocument = document.createElement("h4");
     const contentDocument = document.createElement("p");
-    const authorDocument = document.createElement("p"); 
+    const authorDocument = document.createElement("p");
     const timestampDocument = document.createElement("p");
 
     titleTag.innerHTML = blogPosts[i].title;

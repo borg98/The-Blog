@@ -4,8 +4,10 @@ import { selectCategories } from "./functions/selectCategories";
 import { blog, displaySingleBlog } from "./functions/displaySingleBlog";
 import { Blog } from "./module/blog";
 import { createBlogpost } from "./functions/createBlogpost";
-
+import { creatHtml } from "./functions/creatHtml";
+import { LoadFromLS, SaveToLS } from "./functions/ls";
 let blogPosts: Blog[] = [];
+LoadFromLS(blogPosts);
 let dateSortblogPosts = dateSort(blogPosts);
 console.log(dateSortblogPosts);
 /* Call the create html-function and iterate through the new sorted list, dateSortblogPosts,
@@ -16,7 +18,8 @@ let page = document.body.id;
 
 switch (page) {
   case "1":
-    displaySingleBlog(blog);
+    creatHtml(blogPosts);
+    // displaySingleBlog(blog);
     break;
   case "2":
     const submitBlogpost = document.getElementById(
@@ -27,6 +30,7 @@ switch (page) {
       const newBlog = createBlogpost();
       blogPosts.push(newBlog);
       console.log(blogPosts);
+      SaveToLS(blogPosts);
     });
     break;
 }
