@@ -23,7 +23,7 @@ export function creatHtml() {
     blogContainer.className = "blogContainer";
     const titleTag = document.createElement("h2");
     const categoryDocument = document.createElement("h4");
-    const contentDocument = document.createElement("p");"
+    const contentDocument = document.createElement("p");
     const authorDocument = document.createElement("p"); 
     const timestampDocument = document.createElement("p");
 
