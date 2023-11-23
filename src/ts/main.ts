@@ -8,3 +8,6 @@ console.log(dateSortblogPosts);
  to display the blog posts in descending order, with the newest blog post appearing first. */
 
 selectCategories(blogPosts);
+import { blog, displaySingleBlog } from "./functions/displaySingleBlog";
+
+displaySingleBlog(blog);
