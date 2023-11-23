@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The blog</title>
   </head>
-  <body>
+  <body id="2">
     <header>
       <nav></nav>
     </header>
     <main>
       <div id="mainContainer">
-        <form action="submit" id="formContainer">
-          <input type="text" id="formContainer__input__title" required />
-          <input type="text" id="formContainer__input__category" required />
-          <textarea
-            name="content"
-            id="formContainer__textarea__content"
-            cols="30"
-            rows="10"
-            required
-          ></textarea>
-          <input type="text" id="formContainer__input__author" required />
-          <span id="formContainer__span__timestamp"></span>
-          <button id="formContainer__button__submit"></button>
-        </form>
+        <!-- <form action="none" id="formContainer"> -->
+        <input type="text" id="formContainer__input__title" required />
+        <input type="text" id="formContainer__input__category" required />
+        <textarea
+          name="content"
+          id="formContainer__textarea__content"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+        <input type="text" id="formContainer__input__author" required />
+        <span id="formContainer__span__timestamp"></span>
+        <button id="formContainer__button__submit"></button>
+        <!-- </form> -->
       </div>
     </main>
     <script type="module" src="/src/ts/main.ts"></script>
