@@ -56,12 +56,12 @@ export function displaySingleBlog(aBlog: Blog, blogList: Blog[]) {
   });
 
   headingContainer.appendChild(titleTag);
-  headingContainer.appendChild(dateTag);
   headingContainer.appendChild(categoryTag);
 
   blogContainer.appendChild(headingContainer);
   blogContainer.appendChild(contentTag);
   blogContainer.appendChild(authorTag);
+  blogContainer.appendChild(dateTag);
 
   mainContainer?.appendChild(backButton);
   mainContainer?.appendChild(blogContainer);

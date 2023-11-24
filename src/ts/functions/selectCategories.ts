@@ -24,6 +24,7 @@ export const selectCategories = (blogPosts: Blog[]) => {
       ) as HTMLDivElement;
       const pTag = document.createElement("p");
       pTag.innerHTML = "Finns inget i den här kategorin";
+      pTag.id = "errorCat";
       mainDiv.innerHTML = "";
       mainDiv.appendChild(pTag);
     }

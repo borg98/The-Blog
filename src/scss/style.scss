@@ -1,106 +1,159 @@
-@use 'categories';
-
-
-:root {
+// @use "categories";
+@use "mixins" as x;
+@use "variables" as v;
+* {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(134, 45, 45, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-#mainContainer {
-  height: 500px;
-  width: 100%;
-  background-color: #213547;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  margin: 0;
+  padding: 0;
+  font-size: 12pt;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: v.$secondary-color;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+main {
+  padding: 15px;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+ul {
+  @include x.flex(row);
+  justify-content: space-around;
+  list-style: none;
+  background-color: v.$primary-color;
+  height: 60px;
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  li {
+    a {
+      color: v.$color;
+      text-decoration: none;
+    }
   }
-  a:hover {
-    color: #747bff;
+}
+
+#mainContainer,
+.main-container {
+  justify-content: center;
+  @include x.grid(80%, 90%);
+  gap: 10px;
+  padding: 10px 0;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
   }
+
+  &__button {
+    width: 50px;
+    i {
+      font-size: 2rem;
+      color: v.$color;
+    }
+  }
+
+  .blogContainer,
+  &__blog-container {
+    background-color: v.$color;
+    border-radius: 5px;
+    padding: 10px;
+    line-height: 25px;
+    line-break: normal;
+
+    :nth-child(4) {
+      font-style: italic;
+    }
+
+    :nth-child(5) {
+      text-align: right;
+      opacity: 50%;
+    }
+
+    h2 {
+      font-size: 2rem;
+      padding-bottom: 5px;
+    }
+  }
+  &__blog-container {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    &__heading-container {
+      &__title {
+        font-size: 2rem;
+      }
+      &__category {
+        font-weight: bold;
+      }
+    }
+    &__author {
+      font-style: italic;
+    }
+
+    &heading-container__date {
+      text-align: right;
+      opacity: 50%;
+    }
+  }
+  .blogContainer {
+    :nth-child(3),
+    :nth-child(4) {
+      width: 70%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+#createBlog {
+  main {
+    @include x.flex(column);
+  }
+  #mainContainer {
+    @include x.flex(column);
+    max-width: 650px;
+    gap: 20px;
+    margin-top: 30px;
+    input {
+      @include x.input();
+    }
+    textarea {
+      @include x.textarea();
+    }
+    select {
+      width: 100%;
+
+      max-width: 300px;
+    }
+    button {
+      @include x.button();
+    }
+  }
+}
+.categoryContainer___selectSection {
+  @include x.flex(row);
+  padding: 15px;
+  color: v.$color;
+  gap: 30px;
+  height: 50px;
+
+  label {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  select {
+    font-size: 1.5rem;
+    height: 100%;
+  }
+
   button {
-    background-color: #f9f9f9;
+    @include x.button();
+    height: 21px;
   }
+}
+
+#errorCat {
+  color: v.$color;
+  text-align: center;
 }

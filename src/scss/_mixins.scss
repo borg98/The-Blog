@@ -1,17 +1,42 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 @mixin button() {
-
-
-  background-color:v.$primary-color;
-  box-shadow: 2px 2px 1px v.$shadow, 1px 2px 2px v.$color inset;
+  all: unset;
+  background-color: v.$accent-color;
   border-radius: 5px;
   @content;
-
-&:hover{
-background-color: v.$color;
+  min-height: 30px;
+  max-width: 300px;
+  padding: 0 10px;
+  text-align: center;
+  color: v.$color;
+  &:hover {
+    filter: brightness(0.8);
+  }
 }
 
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
 }
 
+@mixin grid($minwidth, $maxwidth) {
+  display: grid;
+  grid-template-columns: minmax($minwidth, $maxwidth);
+}
 
+@mixin input() {
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  outline: none;
+}
+
+@mixin textarea() {
+  resize: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}

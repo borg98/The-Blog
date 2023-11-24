@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The blog</title>
   </head>
-  <body id="2">
+  <body id="createBlog">
     <header>
       <nav>
         <ul>
@@ -18,7 +18,12 @@
     <main>
       <div id="mainContainer">
         <!-- <form action="none" id="formContainer"> -->
-        <input type="text" id="formContainer__input__title" required />
+        <input
+          type="text"
+          id="formContainer__input__title"
+          required
+          placeholder="Titel"
+        />
         <!-- <input type="text" id="formContainer__input__category" required /> -->
         <select name="category" id="formContainer__input__category">
           <option value="entertainment">Entertainment</option>
@@ -33,10 +38,15 @@
           cols="30"
           rows="10"
           required
+          placeholder="Innehåll"
         ></textarea>
-        <input type="text" id="formContainer__input__author" required />
-        <span id="formContainer__span__timestamp"></span>
-        <button id="formContainer__button__submit"></button>
+        <input
+          type="text"
+          id="formContainer__input__author"
+          required
+          placeholder="Författare"
+        />
+        <button id="formContainer__button__submit">Skapa inlägg</button>
         <!-- </form> -->
       </div>
     </main>

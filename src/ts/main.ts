@@ -11,7 +11,7 @@ switch (page) {
   case "1":
     creatHtml(LoadFromLS(blogPosts));
     break;
-  case "2":
+  case "createBlog":
     const submitBlogpost = document.getElementById(
       "formContainer__button__submit"
     ) as HTMLButtonElement;
@@ -23,9 +23,10 @@ switch (page) {
       blogPosts = newLoadedList;
 
       SaveToLS([...blogPosts]);
+      location.reload();
     });
     break;
-  case "3":
+  case "categoryBody":
     let loadedList: Blog[] = LoadFromLS(blogPosts);
     selectCategories(loadedList);
     creatHtml(blogPosts);
