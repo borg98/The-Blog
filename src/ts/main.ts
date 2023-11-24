@@ -23,7 +23,7 @@ switch (page) {
       blogPosts = newLoadedList;
 
       SaveToLS([...blogPosts]);
-      location.reload();
+      history.back();
     });
     break;
   case "categoryBody":
