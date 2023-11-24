@@ -1,5 +1,4 @@
 import { Blog } from "../module/blog";
-import { creatHtml } from "./creatHtml";
 import { dateSort } from "./dateSort";
 
 export function SaveToLS(blogList: Blog[]) {
@@ -11,8 +10,7 @@ export function LoadFromLS(blogList: Blog[]) {
   if (savedBlogList) {
     blogList = JSON.parse(savedBlogList);
     const sortedList = dateSort(blogList);
-    creatHtml(sortedList);
-    return blogList;
+    return sortedList;
   } else {
     return [];
   }
